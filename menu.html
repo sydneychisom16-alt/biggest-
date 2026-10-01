@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu | FlavourHouse</title>
+
+
+    <!-- ================= INTERNAL CSS ================= -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fffaf5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 100;
+
+            background: rgba(17, 17, 17, 0.96);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #e59b32;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e59b32;
+        }
+
+        .nav-links .active {
+            color: #e59b32;
+        }
+
+        .order-button {
+            background: #e59b32;
+            color: #171717 !important;
+
+            padding: 12px 22px;
+
+            border-radius: 30px;
+        }
+
+        .order-button:hover {
+            background: white;
+        }
+
+
+        /* ================= PAGE HERO ================= */
+
+        .page-hero {
+
+            min-height: 55vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 150px 7% 90px;
+
+            background:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.68),
+                    rgba(0, 0, 0, 0.68)
+                ),
+
+                url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+        }
+
+        .small-title {
+
+            color: #e59b32;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .page-hero h1 {
+
+            font-size: clamp(50px, 7vw, 82px);
+
+            line-height: 1;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 22px;
+        }
+
+        .page-hero p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #eeeeee;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= MENU ================= */
+
+        .menu-section {
+
+            padding: 90px 7%;
+        }
+
+        .section-heading {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+        }
+
+        .section-label {
+
+            color: #c77700;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+
+            font-size: clamp(38px, 5vw, 58px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: #666;
+        }
+
+
+        /* ================= CATEGORY BUTTONS ================= */
+
+        .filters {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+
+            border: 1px solid #d7cabc;
+
+            background: transparent;
+
+            color: #555;
+
+            padding: 11px 22px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+
+            background: #171717;
+
+            color: #e59b32;
+
+            border-color: #171717;
+        }
+
+
+        /* ================= MENU GRID ================= */
+
+        .menu-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+        .menu-card {
+
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+            transition: 0.3s ease;
+        }
+
+        .menu-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+        }
+
+        .menu-image {
+
+            height: 260px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .menu-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s ease;
+        }
+
+        .menu-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .category {
+
+            position: absolute;
+
+            top: 17px;
+            left: 17px;
+
+            background: #e59b32;
+
+            color: #171717;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: 800;
+        }
+
+        .menu-info {
+            padding: 25px;
+        }
+
+        .menu-name {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 10px;
+        }
+
+        .menu-name h3 {
+            font-size: 21px;
+        }
+
+        .price {
+
+            color: #c77700;
+
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+        .menu-info p {
+
+            color: #777;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .order-link {
+
+            display: inline-block;
+
+            color: #171717;
+
+            background: #e59b32;
+
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            transition: 0.3s ease;
+        }
+
+        .order-link:hover {
+
+            background: #171717;
+
+            color: white;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+
+            padding: 100px 7%;
+
+            background: #171717;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .cta .small-title {
+            color: #e59b32;
+        }
+
+        .cta h2 {
+
+            font-size: clamp(38px, 5vw, 58px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+
+            color: #aaa;
+
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+
+            display: inline-block;
+
+            background: #e59b32;
+
+            color: #171717;
+
+            padding: 15px 28px;
+
+            border-radius: 30px;
+
+            font-weight: 800;
+
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+
+            background: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #111;
+
+            color: white;
+
+            padding: 55px 7% 25px;
+        }
+
+        .footer-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding-bottom: 40px;
+        }
+
+        .footer-logo {
+
+            font-size: 28px;
+
+            font-weight: 800;
+        }
+
+        .footer-logo span {
+            color: #e59b32;
+        }
+
+        .footer-top p {
+
+            color: #999;
+
+            margin-top: 10px;
+        }
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+
+            color: #aaa;
+
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #e59b32;
+        }
+
+        .footer-bottom {
+
+            border-top: 1px solid #292929;
+
+            padding-top: 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 950px) {
+
+            nav {
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a:not(.order-button) {
+                display: none;
+            }
+
+            .menu-section {
+                padding: 75px 5%;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .page-hero {
+                min-height: 50vh;
+
+                padding: 130px 5% 70px;
+            }
+
+            .page-hero h1 {
+                font-size: 55px;
+            }
+
+            .page-hero p {
+                font-size: 15px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-image {
+                height: 250px;
+            }
+
+            .footer-top {
+                display: block;
+            }
+
+            .footer-links {
+                margin-top: 25px;
+            }
+
+            .footer-bottom {
+                display: block;
+            }
+
+            .footer-bottom p:last-child {
+                margin-top: 8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav id="navbar">
+
+        <a href="index.html" class="logo">
+            Flavour<span>House</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html" class="active">
+                Menu
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="order.html" class="order-button">
+                Order Now
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= PAGE HERO ================= -->
+
+    <section class="page-hero">
+
+        <div class="page-hero-content">
+
+            <div class="small-title">
+                FLAVOURHOUSE MENU
+            </div>
+
+            <h1>
+                Something delicious
+                awaits.
+            </h1>
+
+            <p>
+                Explore our selection of freshly prepared dishes,
+                made with quality ingredients and bold flavours.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MENU SECTION ================= -->
+
+    <section class="menu-section">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                OUR MENU
+            </div>
+
+            <h2>
+                Made for every craving.
+            </h2>
+
+            <p>
+                From satisfying burgers and pizzas to creamy pasta
+                and refreshing drinks, there is something for everyone.
+            </p>
+
+        </div>
+
+
+        <!-- ================= FILTERS ================= -->
+
+        <div class="filters">
+
+            <button
+                class="filter-btn active"
+                data-category="all"
+            >
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="burger"
+            >
+                Burgers
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="pizza"
+            >
+                Pizza
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="pasta"
+            >
+                Pasta
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="chicken"
+            >
+                Chicken
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="drinks"
+            >
+                Drinks
+            </button>
+
+        </div>
+
+
+
+        <!-- ================= MENU ITEMS ================= -->
+
+        <div class="menu-grid" id="menuGrid">
+
+
+            <!-- BURGER -->
+
+            <article
+                class="menu-card"
+                data-category="burger"
+            >
+
+                <div class="menu-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=90"
+                        alt="Classic burger"
+                    >
+
+                    <span class="category">
+                        BURGER
+                    </span>
+
+                </div>
+
+                <div class="menu-info">
+
+                    <div class="menu-name">
+
+                        <h3>
+                            Classic Burger
+                        </h3>
+
+                        <span class="price">
+                            ₦5,000
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Juicy beef, fresh vegetables, cheese
+                        and our signature house sauce.
+                    </p>
+
+                    <a
+                        href="order.html?food=Classic%20Burger"
+                        class="order-link"
+                    >
+                        Order now
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CHEESEBURGER -->
+
+            <article
+                class="menu-card"
+                data-category="burger"
+            >
+
+                <div class="menu-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=1000&q=90"
+                        alt="Double cheeseburger"
+                    >
+
+                    <span class="category">
+                        BURGER
+                    </span>
+
+                </div>
+
+                <div class="menu-info">
+
+                    <div class="menu-name">
+
+                        <h3>
+                            Double Cheeseburger
+                        </h3>
+
+                        <span class="price">
+                            ₦6,500
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Two juicy beef patties with melted cheese,
+                        fresh lettuce and house sauce.
+                    </p>
+
+                    <a
+                        href="order.html?food=Double%20Cheeseburger"
+                        class="order-link"
+                    >
+                        Order now
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PIZZA -->
+
+            <article
+                class="menu-card"
+                data-category="pizza"
+            >
+
+                <div class="menu-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=90"
+                        alt="Pepperoni pizza"
+                    >
+
+                    <span class="category">
+                        PIZZA
+                    </span>
+
+                </div>
+
+                <div class="menu-info">
+
+                    <div class="menu-name">
+
+                        <h3>
+                            Pepperoni Pizza
+                        </h3>
+
+                        <span class="price">
+                            ₦8,000
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Stone-baked pizza with mozzarella,
+                        tomato sauce and pepperoni.
+                    </p>
+
+                    <a
+                        href="order.html?food=Pepperoni%20Pizza"
+                        class="order-link"
+                    >
+                        Order now
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CHICKEN PIZZA -->
+
+            <article
+                class="menu-card"
+                data-category="pizza"
+            >
+
+                <div class="menu-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=90"
+                        alt="Chicken pizza"
+                    >
+
+                    <span class="category">
+                        PIZZA
+                    </span>
+
+                </div>
+
+                <div class="menu-info">
+
+                    <div class="menu-name">
+
+                        <h3>
+                            Chicken Supreme Pizza
+                        </h3>
+
+                        <span class="price">
+                            ₦9,000
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Chicken, peppers, onions, mozzarella
+                        and our rich tomato sauce.
+                    </p>
+
+                    <a
+                        href="order.html?food=Chicken%20Supreme%20Pizza"
+                        class="order-link"
+                    >
+                        Order now
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ALFREDO -->
+
+            <article
+                class="menu-card"
+                data-category="pasta"
+            >
+
+                <div class="menu-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1000&q=90"
+                        alt="Chicken Alfredo pasta"
+                    >
+
+                    <span class="category">
+                        PASTA
+                    </span>
+
+                </div>
+
+                <div class="menu-info">
+
+                    <div class="menu-name">
+
+                        <h3>
+                            Chicken Alfredo
+                        </h3>
+
+                        <span class="price">
+                            ₦6,500
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Creamy Alfredo pasta served with
+                        tender seasoned chicken.
+                    </p>
+
+                    <a
+                        href="order.html?food=Chicken%20Alfredo"
+                        class="order-link"
+                    >
+                        Order now
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- TOMATO PASTA -->
+
+            <article
+                class="menu-card"
+                data-category="pasta"
+            >
+
+                <div class="menu-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?auto=format&fit=crop&w=1000&q=90"
+                        alt="Tomato pasta"
+                    >

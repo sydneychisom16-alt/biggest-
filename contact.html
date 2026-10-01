@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | FlavourHouse</title>
+
+
+    <!-- ================= INTERNAL CSS ================= -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fffaf5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 100;
+
+            background: rgba(17, 17, 17, 0.96);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #e59b32;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e59b32;
+        }
+
+        .nav-links .active {
+            color: #e59b32;
+        }
+
+        .order-button {
+            background: #e59b32;
+            color: #171717 !important;
+
+            padding: 12px 22px;
+
+            border-radius: 30px;
+        }
+
+        .order-button:hover {
+            background: white;
+        }
+
+
+        /* ================= PAGE HERO ================= */
+
+        .page-hero {
+
+            min-height: 55vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 150px 7% 90px;
+
+            background:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.68),
+                    rgba(0, 0, 0, 0.68)
+                ),
+
+                url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+        }
+
+        .small-title {
+
+            color: #e59b32;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .page-hero h1 {
+
+            font-size: clamp(50px, 7vw, 82px);
+
+            line-height: 1;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 22px;
+        }
+
+        .page-hero p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #eeeeee;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= CONTACT SECTION ================= */
+
+        .contact-section {
+
+            padding: 100px 7%;
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 80px;
+
+            align-items: start;
+        }
+
+
+        /* ================= CONTACT INFO ================= */
+
+        .section-label {
+
+            color: #c77700;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-info h2 {
+
+            font-size: clamp(38px, 5vw, 58px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-intro {
+
+            color: #666;
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+        }
+
+        .info-list {
+
+            display: grid;
+
+            gap: 25px;
+        }
+
+        .info-item {
+
+            padding-bottom: 25px;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-item h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+
+            color: #666;
+
+            font-size: 15px;
+        }
+
+        .info-item a {
+
+            color: #c77700;
+
+            font-weight: 600;
+        }
+
+        .info-item a:hover {
+            color: #e59b32;
+        }
+
+
+        /* ================= CONTACT FORM ================= */
+
+        .contact-form {
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.07);
+        }
+
+        .contact-form h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+
+            color: #777;
+
+            font-size: 14px;
+
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+
+            display: block;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border: 1px solid #d8d0c7;
+
+            border-radius: 10px;
+
+            background: #fffaf5;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            border-color: #e59b32;
+
+            box-shadow:
+                0 0 0 3px rgba(229, 155, 50, 0.12);
+        }
+
+        .form-group textarea {
+
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+        .submit-button {
+
+            width: 100%;
+
+            border: none;
+
+            background: #171717;
+
+            color: white;
+
+            padding: 15px;
+
+            border-radius: 30px;
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .submit-button:hover {
+
+            background: #e59b32;
+
+            color: #171717;
+        }
+
+        .form-message {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 13px 15px;
+
+            border-radius: 10px;
+
+            background: #edf8ed;
+
+            color: #287228;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        /* ================= HOURS ================= */
+
+        .hours {
+
+            padding: 80px 7%;
+
+            background: #f2e9dc;
+        }
+
+        .hours-inner {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .hours-inner h2 {
+
+            font-size: clamp(36px, 5vw, 55px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 40px;
+        }
+
+        .hours-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .hours-card {
+
+            padding: 30px 20px;
+
+            background: white;
+
+            border-radius: 15px;
+        }
+
+        .hours-card h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 8px;
+        }
+
+        .hours-card p {
+            color: #666;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+
+            padding: 100px 7%;
+
+            background: #171717;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta-content {
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+        .cta h2 {
+
+            font-size: clamp(40px, 6vw, 68px);
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+
+            display: inline-block;
+
+            background: #e59b32;
+
+            color: #171717;
+
+            padding: 15px 28px;
+
+            border-radius: 30px;
+
+            font-weight: 800;
+
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+
+            background: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #111;
+
+            color: white;
+
+            padding: 55px 7% 25px;
+        }
+
+        .footer-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding-bottom: 40px;
+        }
+
+        .footer-logo {
+
+            font-size: 28px;
+
+            font-weight: 800;
+        }
+
+        .footer-logo span {
+            color: #e59b32;
+        }
+
+        .footer-top p {
+
+            color: #999;
+
+            margin-top: 10px;
+        }
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+
+            color: #aaa;
+
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #e59b32;
+        }
+
+        .footer-bottom {
+
+            border-top: 1px solid #292929;
+
+            padding-top: 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a:not(.order-button) {
+                display: none;
+            }
+
+            .contact-section {
+
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+
+                padding: 75px 5%;
+            }
+
+            .hours {
+                padding: 75px 5%;
+            }
+
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .page-hero {
+
+                min-height: 50vh;
+
+                padding: 130px 5% 70px;
+            }
+
+            .page-hero h1 {
+                font-size: 55px;
+            }
+
+            .page-hero p {
+                font-size: 15px;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+
+            .footer-top {
+                display: block;
+            }
+
+            .footer-links {
+                margin-top: 25px;
+            }
+
+            .footer-bottom {
+                display: block;
+            }
+
+            .footer-bottom p:last-child {
+                margin-top: 8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            Flavour<span>House</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html" class="active">
+                Contact
+            </a>
+
+            <a href="order.html" class="order-button">
+                Order Now
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= PAGE HERO ================= -->
+
+    <section class="page-hero">
+
+        <div class="page-hero-content">
+
+            <div class="small-title">
+                GET IN TOUCH
+            </div>
+
+            <h1>
+                Let's talk.
+            </h1>
+
+            <p>
+                Have a question, suggestion or just want to say hello?
+                We'd love to hear from you.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT SECTION ================= -->
+
+    <section class="contact-section">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <div class="section-label">
+                CONTACT US
+            </div>
+
+            <h2>
+                We'd love to
+                hear from you.
+            </h2>
+
+            <p class="contact-intro">
+                Reach out to FlavourHouse and our team will
+                get back to you as soon as possible.
+            </p>
+
+
+            <div class="info-list">
+
+
+                <div class="info-item">
+
+                    <h3>
+                        Phone
+                    </h3>
+
+                    <p>
+                        <a href="tel:+2348000000000">
+                            +234 800 000 0000
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        <a href="mailto:hello@flavourhouse.com">
+                            hello@flavourhouse.com
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <h3>
+                        Location
+                    </h3>
+
+                    <p>
+                        12 Flavour Street, Lagos, Nigeria
+                    </p>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <h3>
+                        Opening Hours
+                    </h3>
+
+                    <p>
+                        Monday – Sunday
+                        <br>
+                        10:00 AM – 10:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form">
+
+            <h2>
+                Send us a message
+            </h2>
+
+            <p class="form-subtitle">
+                Fill in the form below and we'll get back to you.
+            </p>
+
+
+            <form id="contactForm">
+
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your full name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <select id="subject" required>
+
+                        <option value="">
+                            Select a subject
+                        </option>
+
+                        <option value="General Question">
+                            General Question
+                        </option>
+
+                        <option value="Food & Menu">
+                            Food & Menu
+                        </option>
+
+                        <option value="Order">
+                            Order
+                        </option>
+
+                        <option value="Feedback">
+                            Feedback
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Send Message
+                </button>
+
+
+                <div
+                    class="form-message"
+                    id="formMessage"
+                >
+                    Thanks! Your message has been received.
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= OPENING HOURS ================= -->
+
+    <section class="hours">
+
+        <div class="hours-inner">
+
+            <div class="section-label">
+                WHEN TO VISIT
+            </div>
+
+            <h2>
+                We're ready when you are.
+            </h2>
+
+
+            <div class="hours-grid">
+
+
+                <div class="hours-card">
+
+                    <h3>
+                        Monday – Friday
+                    </h3>
+
+                    <p>
+                        10:00 AM – 10:00 PM
+                    </p>
+
+                </div>
+
+
+                <div class="hours-card">
+
+                    <h3>
+                        Saturday
+                    </h3>
+
+                    <p>
+                        10:00 AM – 11:00 PM
+                    </p>
+
+                </div>
+
+
+                <div class="hours-card">
+
+                    <h3>
+                        Sunday
+                    </h3>
+
+                    <p>
+                        12:00 PM – 10:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div class="cta-content">
+
+            <div class="small-title">
+                HUNGRY YET?
+            </div>
+
+            <h2>
+                Let's make
+                something delicious.
+            </h2>
+
+            <a
+                href="order.html"
+                class="cta-button"
+            >
+                Place an Order
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div>
+
+                <div class="footer-logo">
+                    Flavour<span>House</span>
+                </div>
+
+                <p>
+                    Great food. Great moments.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="order.html">
+                    Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 FlavourHouse. All rights reserved.
+            </p>
+
+            <p>
+                Fresh food. Great moments.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= INTERNAL JAVASCRIPT ================= -->
+
+    <script>
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const formMessage =
+            document.getElementById("formMessage");
+
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                // Show success message
+                formMessage.style.display = "block";

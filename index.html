@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FlavourHouse | Great Food. Great Moments.</title>
+
+
+    <!-- ================= INTERNAL CSS ================= -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fffaf5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            z-index: 100;
+
+            background: transparent;
+
+            transition: 0.3s ease;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #e59b32;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e59b32;
+        }
+
+        .order-button {
+            background: #e59b32;
+            color: #171717 !important;
+
+            padding: 12px 22px;
+            border-radius: 30px;
+        }
+
+        .order-button:hover {
+            background: white;
+            color: #171717 !important;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 120px 7%;
+
+            background:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.65)
+                ),
+
+                url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 720px;
+            color: white;
+        }
+
+        .small-title {
+            color: #e59b32;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(52px, 7vw, 90px);
+
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: #e59b32;
+        }
+
+        .hero p {
+            max-width: 590px;
+
+            font-size: 18px;
+
+            color: #eeeeee;
+
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 15px 28px;
+
+            border-radius: 30px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .primary-button {
+            background: #e59b32;
+            color: #171717;
+        }
+
+        .primary-button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .secondary-button {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .secondary-button:hover {
+            background: white;
+            color: #171717;
+        }
+
+
+        /* ================= GENERAL SECTIONS ================= */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-label {
+            color: #c77700;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(35px, 5vw, 58px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ================= INTRO ================= */
+
+        .intro {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+
+            background: #fffaf5;
+        }
+
+        .intro-text p {
+            color: #666;
+
+            margin-bottom: 18px;
+
+            font-size: 17px;
+        }
+
+        .learn-more {
+            color: #c77700;
+
+            font-weight: 700;
+        }
+
+
+        /* ================= POPULAR DISHES ================= */
+
+        .dishes {
+            background: #171717;
+            color: white;
+        }
+
+        .section-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            gap: 30px;
+
+            margin-bottom: 45px;
+        }
+
+        .section-top .section-label {
+            color: #e59b32;
+        }
+
+        .view-menu {
+            color: #e59b32;
+
+            font-weight: 700;
+        }
+
+        .dish-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+        .dish-card {
+
+            background: #242424;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            transition: 0.3s ease;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .dish-image {
+
+            height: 270px;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .dish-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s ease;
+        }
+
+        .dish-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .category {
+
+            position: absolute;
+
+            top: 18px;
+            left: 18px;
+
+            background: #e59b32;
+
+            color: #171717;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: 800;
+        }
+
+        .dish-info {
+            padding: 25px;
+        }
+
+        .dish-name {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 12px;
+        }
+
+        .dish-name h3 {
+            font-size: 21px;
+        }
+
+        .price {
+            color: #e59b32;
+
+            white-space: nowrap;
+        }
+
+        .dish-info p {
+
+            color: #aaa;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .dish-order {
+
+            color: #e59b32;
+
+            font-weight: 700;
+
+            font-size: 14px;
+        }
+
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            background: #f2e9dc;
+        }
+
+        .center {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            margin-bottom: 55px;
+        }
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 40px;
+        }
+
+        .feature {
+
+            padding: 35px 0;
+
+            border-top: 1px solid #c9bba9;
+        }
+
+        .feature-number {
+
+            color: #c77700;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            margin-bottom: 25px;
+        }
+
+        .feature h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 12px;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+
+            min-height: 500px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.68),
+                    rgba(0, 0, 0, 0.68)
+                ),
+
+                url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+        }
+
+        .cta-content {
+            max-width: 700px;
+        }
+
+        .cta h2 {
+
+            font-size: clamp(40px, 6vw, 70px);
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #111;
+
+            color: white;
+
+            padding: 55px 7% 25px;
+        }
+
+        .footer-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding-bottom: 40px;
+        }
+
+        .footer-logo {
+
+            font-size: 28px;
+
+            font-weight: 800;
+        }
+
+        .footer-logo span {
+            color: #e59b32;
+        }
+
+        .footer-top p {
+
+            color: #999;
+
+            margin-top: 10px;
+        }
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+
+            color: #aaa;
+
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #e59b32;
+        }
+
+        .footer-bottom {
+
+            border-top: 1px solid #292929;
+
+            padding-top: 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a:not(.order-button) {
+                display: none;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+            .dish-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding: 120px 5% 70px;
+            }
+
+            .hero h1 {
+
+                font-size: 55px;
+
+                letter-spacing: -3px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-top {
+                display: block;
+            }
+
+            .view-menu {
+
+                display: inline-block;
+
+                margin-top: 10px;
+            }
+
+            .dish-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dish-image {
+                height: 250px;
+            }
+
+            .footer-top {
+                display: block;
+            }
+
+            .footer-links {
+                margin-top: 25px;
+            }
+
+            .footer-bottom {
+                display: block;
+            }
+
+            .footer-bottom p:last-child {
+                margin-top: 8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav id="navbar">
+
+        <a href="index.html" class="logo">
+            Flavour<span>House</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="order.html" class="order-button">
+                Order Now
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                WELCOME TO FLAVOURHOUSE
+            </div>
+
+            <h1>
+                Great food.
+                <br>
+                Great <span>moments.</span>
+            </h1>
+
+            <p>
+                Experience delicious meals prepared with fresh
+                ingredients, bold flavours and a passion for
+                exceptional food.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="menu.html"
+                    class="button primary-button"
+                >
+                    Explore Menu
+                </a>
+
+                <a
+                    href="about.html"
+                    class="button secondary-button"
+                >
+                    Our Story
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="intro">
+
+        <div>
+
+            <div class="section-label">
+                OUR PHILOSOPHY
+            </div>
+
+            <h2 class="section-title">
+                Made with passion,
+                served with love.
+            </h2>
+
+        </div>
+
+
+        <div class="intro-text">
+
+            <p>
+                At FlavourHouse, we believe great food is more
+                than just a meal. It is an experience worth sharing.
+            </p>
+
+            <p>
+                Every dish is prepared with carefully selected
+                ingredients and attention to detail.
+            </p>
+
+            <a
+                href="about.html"
+                class="learn-more"
+            >
+                Discover our story →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= POPULAR DISHES ================= -->
+
+    <section class="dishes">
+
+        <div class="section-top">
+
+            <div>
+
+                <div class="section-label">
+                    FROM OUR KITCHEN
+                </div>
+
+                <h2 class="section-title">
+                    Popular dishes
+                </h2>
+
+            </div>
+
+            <a
+                href="menu.html"
+                class="view-menu"
+            >
+                View full menu →
+            </a>
+
+        </div>
+
+
+        <div class="dish-grid">
+
+
+            <!-- ================= BURGER ================= -->
+
+            <article class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=90"
+                        alt="Classic beef burger"
+                    >
+
+                    <span class="category">
+                        BURGER
+                    </span>
+
+                </div>
+
+
+                <div class="dish-info">
+
+                    <div class="dish-name">
+
+                        <h3>
+                            Classic Burger
+                        </h3>
+
+                        <strong class="price">
+                            ₦5,000
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        Juicy beef, fresh vegetables and our
+                        signature house sauce.
+                    </p>
+
+                    <a
+                        href="order.html?food=Classic%20Burger"
+                        class="dish-order"
+                    >
+                        Order now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ================= PIZZA ================= -->
+
+            <article class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=90"
+                        alt="Fresh pepperoni pizza"
+                    >
+
+                    <span class="category">
+                        PIZZA
+                    </span>
+
+                </div>
+
+
+                <div class="dish-info">
+
+                    <div class="dish-name">
+
+                        <h3>
+                            Pepperoni Pizza
+                        </h3>
+
+                        <strong class="price">
+                            ₦8,000
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        Stone-baked pizza with mozzarella,
+                        tomato sauce and pepperoni.
+                    </p>
+
+                    <a
+                        href="order.html?food=Pepperoni%20Pizza"
+                        class="dish-order"
+                    >
+                        Order now →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ================= PASTA ================= -->
+
+            <article class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1000&q=90"
+                        alt="Creamy chicken Alfredo pasta"
+                    >
+
+                    <span class="category">
+                        PASTA
+                    </span>
+
+                </div>
+
+
+                <div class="dish-info">
+
+                    <div class="dish-name">
+
+                        <h3>
+                            Chicken Alfredo
+                        </h3>
+
+                        <strong class="price">
+                            ₦6,500
+                        </strong>
+
+                    </div>
+
+                    <p>
+                        Creamy Alfredo pasta served with
+                        tender seasoned chicken.
+                    </p>
+
+                    <a
+                        href="order.html?food=Chicken%20Alfredo%20Pasta"
+                        class="dish-order"
+                    >
+                        Order now →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <div class="center">
+
+            <div class="section-label">
+                THE FLAVOURHOUSE DIFFERENCE
+            </div>
+
+            <h2 class="section-title">
+                Why people choose us.
+            </h2>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature">
+
+                <div class="feature-number">
+                    01
+                </div>
+
+                <h3>
+                    Fresh ingredients
+                </h3>
+
+                <p>
+                    Quality ingredients carefully selected
+                    for every meal we prepare.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-number">
+                    02
+                </div>
+
+                <h3>
+                    Crafted with care
+                </h3>
+
+                <p>
+                    Our meals are prepared with attention
+                    to flavour, quality and presentation.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-number">
+                    03
+                </div>
+
+                <h3>
+                    Made for you
+                </h3>
+
+                <p>
+                    Whether you dine with us or order from home,
+                    we want every

@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | FlavourHouse</title>
+
+
+    <!-- ================= INTERNAL CSS ================= -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fffaf5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 100;
+
+            background: rgba(17, 17, 17, 0.96);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #e59b32;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e59b32;
+        }
+
+        .nav-links .active {
+            color: #e59b32;
+        }
+
+        .order-button {
+            background: #e59b32;
+            color: #171717 !important;
+
+            padding: 12px 22px;
+
+            border-radius: 30px;
+        }
+
+        .order-button:hover {
+            background: white;
+        }
+
+
+        /* ================= PAGE HERO ================= */
+
+        .page-hero {
+
+            min-height: 55vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 150px 7% 90px;
+
+            background:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.68),
+                    rgba(0, 0, 0, 0.68)
+                ),
+
+                url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+        }
+
+        .small-title {
+
+            color: #e59b32;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .page-hero h1 {
+
+            font-size: clamp(50px, 7vw, 82px);
+
+            line-height: 1;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 22px;
+        }
+
+        .page-hero p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #eeeeee;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= STORY SECTION ================= */
+
+        .story {
+
+            padding: 100px 7%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .story-image {
+
+            height: 600px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .story-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .section-label {
+
+            color: #c77700;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+        .story-content h2 {
+
+            font-size: clamp(38px, 5vw, 60px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 25px;
+        }
+
+        .story-content p {
+
+            color: #666;
+
+            font-size: 17px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= VALUES ================= */
+
+        .values {
+
+            padding: 100px 7%;
+
+            background: #171717;
+
+            color: white;
+        }
+
+        .section-heading {
+
+            max-width: 700px;
+
+            margin-bottom: 55px;
+        }
+
+        .values .section-label {
+            color: #e59b32;
+        }
+
+        .section-heading h2 {
+
+            font-size: clamp(38px, 5vw, 58px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: #aaa;
+        }
+
+        .values-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+        .value-card {
+
+            padding: 35px;
+
+            background: #242424;
+
+            border-radius: 18px;
+
+            border: 1px solid #333;
+
+            transition: 0.3s ease;
+        }
+
+        .value-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color: #e59b32;
+        }
+
+        .value-number {
+
+            color: #e59b32;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            margin-bottom: 25px;
+        }
+
+        .value-card h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            color: #aaa;
+        }
+
+
+        /* ================= EXPERIENCE ================= */
+
+        .experience {
+
+            padding: 100px 7%;
+
+            background: #f2e9dc;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .experience-content h2 {
+
+            font-size: clamp(38px, 5vw, 58px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 25px;
+        }
+
+        .experience-content p {
+
+            color: #666;
+
+            font-size: 17px;
+
+            margin-bottom: 18px;
+        }
+
+        .experience-image {
+
+            height: 500px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .experience-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* ================= NUMBERS ================= */
+
+        .numbers {
+
+            padding: 80px 7%;
+
+            background: #fffaf5;
+        }
+
+        .number-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 40px;
+
+            text-align: center;
+        }
+
+        .number-box {
+
+            padding: 20px;
+
+            border-right: 1px solid #ddd;
+        }
+
+        .number-box:last-child {
+            border-right: none;
+        }
+
+        .number-box h3 {
+
+            font-size: 48px;
+
+            color: #c77700;
+
+            margin-bottom: 5px;
+        }
+
+        .number-box p {
+            color: #666;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+
+            padding: 100px 7%;
+
+            min-height: 480px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    rgba(0, 0, 0, 0.68),
+                    rgba(0, 0, 0, 0.68)
+                ),
+
+                url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+        }
+
+        .cta-content {
+            max-width: 700px;
+        }
+
+        .cta h2 {
+
+            font-size: clamp(40px, 6vw, 68px);
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+
+            display: inline-block;
+
+            background: #e59b32;
+
+            color: #171717;
+
+            padding: 15px 28px;
+
+            border-radius: 30px;
+
+            font-weight: 800;
+
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+
+            background: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #111;
+
+            color: white;
+
+            padding: 55px 7% 25px;
+        }
+
+        .footer-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding-bottom: 40px;
+        }
+
+        .footer-logo {
+
+            font-size: 28px;
+
+            font-weight: 800;
+        }
+
+        .footer-logo span {
+            color: #e59b32;
+        }
+
+        .footer-top p {
+
+            color: #999;
+
+            margin-top: 10px;
+        }
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+
+            color: #aaa;
+
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #e59b32;
+        }
+
+        .footer-bottom {
+
+            border-top: 1px solid #292929;
+
+            padding-top: 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a:not(.order-button) {
+                display: none;
+            }
+
+            .story,
+            .experience {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+                padding: 75px 5%;
+            }
+
+            .story-image {
+                height: 450px;
+            }
+
+            .experience-image {
+                height: 400px;
+
+                order: -1;
+            }
+
+            .values {
+                padding: 75px 5%;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .numbers {
+                padding: 65px 5%;
+            }
+
+            .number-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .number-box {
+
+                border-right: none;
+
+                border-bottom: 1px solid #ddd;
+
+                padding: 25px;
+            }
+
+            .number-box:last-child {
+                border-bottom: none;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .page-hero {
+
+                min-height: 50vh;
+
+                padding: 130px 5% 70px;
+            }
+
+            .page-hero h1 {
+                font-size: 55px;
+            }
+
+            .page-hero p {
+                font-size: 15px;
+            }
+
+            .story-image {
+                height: 350px;
+            }
+
+            .experience-image {
+                height: 320px;
+            }
+
+            .footer-top {
+                display: block;
+            }
+
+            .footer-links {
+                margin-top: 25px;
+            }
+
+            .footer-bottom {
+                display: block;
+            }
+
+            .footer-bottom p:last-child {
+                margin-top: 8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            Flavour<span>House</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="about.html" class="active">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="order.html" class="order-button">
+                Order Now
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= PAGE HERO ================= -->
+
+    <section class="page-hero">
+
+        <div class="page-hero-content">
+
+            <div class="small-title">
+                OUR STORY
+            </div>
+
+            <h1>
+                More than just
+                good food.
+            </h1>
+
+            <p>
+                FlavourHouse was created around one simple idea:
+                great food should bring people together.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= STORY ================= -->
+
+    <section class="story">
+
+        <div class="story-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=90"
+                alt="FlavourHouse restaurant interior"
+            >
+
+        </div>
+
+
+        <div class="story-content">
+
+            <div class="section-label">
+                WHO WE ARE
+            </div>
+
+            <h2>
+                Food made with
+                purpose.
+            </h2>
+
+            <p>
+                At FlavourHouse, we believe that a great restaurant
+                should be about more than simply serving food.
+            </p>
+
+            <p>
+                It should be a place where people can relax,
+                connect, celebrate and enjoy something delicious.
+            </p>
+
+            <p>
+                Our kitchen focuses on fresh ingredients, bold
+                flavours and meals prepared with care.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= VALUES ================= -->
+
+    <section class="values">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                WHAT WE BELIEVE
+            </div>
+
+            <h2>
+                The values behind
+                every plate.
+            </h2>
+
+            <p>
+                Everything we do at FlavourHouse is guided by
+                quality, hospitality and a genuine love for food.
+            </p>
+
+        </div>
+
+
+        <div class="values-grid">
+
+
+            <div class="value-card">
+
+                <div class="value-number">
+                    01
+                </div>
+
+                <h3>
+                    Quality
+                </h3>
+
+                <p>
+                    We choose quality ingredients and take care
+                    in how every meal is prepared.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-number">
+                    02
+                </div>
+
+                <h3>
+                    Creativity
+                </h3>
+
+                <p>
+                    We enjoy creating flavours and dishes that
+                    make every visit interesting.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-number">
+                    03
+                </div>
+
+                <h3>
+                    Hospitality
+                </h3>
+
+                <p>
+                    Every guest deserves to feel welcome,
+                    comfortable and appreciated.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section class="experience">
+
+        <div class="experience-content">
+
+            <div class="section-label">
+                THE EXPERIENCE
+            </div>
+
+            <h2>
+                Come hungry.
+                Leave happy.
+            </h2>
+
+            <p>
+                Whether you are meeting friends, enjoying a
+                family meal or simply treating yourself,
+                FlavourHouse is designed to make the experience
+                memorable.
+            </p>
+
+            <p>
+                From the first bite to the last, our goal is
+                simple: serve food that keeps you coming back.
+            </p>
+
+        </div>
+
+
+        <div class="experience-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=90"
+                alt="Delicious restaurant meal"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= NUMBERS ================= -->
+
+    <section class="numbers">
+
+        <div class="number-grid">
+
+
+            <div class="number-box">
+
+                <h3>
+                    20+
+                </h3>
+
+                <p>
+                    Signature dishes
+                </p>
+
+            </div>
+
+
+            <div class="number-box">
+
+                <h3>
+                    100%
+                </h3>
+
+                <p>
+                    Made with care
+                </p>
+
+            </div>
+
+
+            <div class="number-box">
+
+                <h3>
+                    1
+                </h3>
+
+                <p>
+                    Passion for great food
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <div class="cta-content">
+
+            <div class="small-title">
+                EXPERIENCE FLAVOURHOUSE
+            </div>
+
+            <h2>
+                Your table is
+                waiting.
+            </h2>
+
+            <a
+                href="order.html"
+                class="cta-button"
+            >
+                Order Now
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div>
+
+                <div class="footer-logo">
+                    Flavour<span>House</span>
+                </div>
+
+                <p>
+                    Great food. Great moments.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="order.html">
+                    Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 FlavourHouse. All rights reserved.
+            </p>
+
+            <p>
+                Fresh food. Great moments.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= INTERNAL JAVASCRIPT ================= -->
+
+    <script>
+
+        // Small reveal effect when sections enter the screen
+
+        const sections =
+            document.querySelectorAll(
+                ".story, .values, .experience, .numbers, .cta"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.style.opacity = "1";
+
+                            entry.target.style.transform =
+                                "translateY(0)";
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        sections.forEach(function (section) {
+
+            section.style.opacity = "0";
+
+            section.style.transform =
+                "translateY(25px)";
+
+            se
