@@ -125,3 +125,11 @@ app.listen(PORT, () => {
     );
 
 });
+// At the bottom of server.js
+module.exports = app;
+
+// Keep listen for local dev, but avoid starting it on Vercel:
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
